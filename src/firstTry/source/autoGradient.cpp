@@ -2,7 +2,7 @@
 // Created by yuyuan on 2024/10/12.
 //
 
-#include "autoGradient.h"
+#include "../include/autoGradient.h"
 
 
 void Node::forward() {
@@ -160,6 +160,11 @@ std::shared_ptr<Node> dot(const std::vector<std::shared_ptr<Node>>& vec1, const 
 
     return std::make_shared<Node>(dot_op, inputs);
 }
+
+// std::vector<std::shared_ptr<Node>> matmul(const std::vector<std::vector<std::shared_ptr<Node>>>& mat1, const std::vector<std::shared_ptr<Node>>& vec)
+// {
+//
+// }
 
 
 void computeGradients(const std::shared_ptr<Node>& node) {

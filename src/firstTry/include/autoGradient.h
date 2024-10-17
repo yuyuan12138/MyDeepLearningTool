@@ -80,6 +80,7 @@ class DotProductOperation : public BasicOperation
     void backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const override;
 };
 
+
 std::shared_ptr<Node> makeNode(const std::shared_ptr<BasicOperation>& op, const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
 
 std::shared_ptr<Node> operator+(const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
@@ -93,6 +94,8 @@ std::shared_ptr<Node> operator-(const std::shared_ptr<Node>& a, const std::share
 std::shared_ptr<Node> operator^(const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
 
 std::shared_ptr<Node> dot(const std::vector<std::shared_ptr<Node>>& vec1, const std::vector<std::shared_ptr<Node>>& vec2);
+
+std::vector<std::shared_ptr<Node>> matmul(const std::vector<std::vector<std::shared_ptr<Node>>>& mat1, const std::vector<std::shared_ptr<Node>>& vec);
 
 void computeGradients(const std::shared_ptr<Node>& node);
 
