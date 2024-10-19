@@ -7,6 +7,7 @@
 
 #include <memory>
 #include "node.h"
+#include "tensor.h"
 
 class BasicUpdate
 {
@@ -30,6 +31,7 @@ public:
         void update(const std::shared_ptr<Node>& node) const override;
 
         void update(const std::vector<std::shared_ptr<Node>>& nodes) const override;
+
 
     };
 };

@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <memory>
+
 #include "twoParameterOperation.h"
 
 class Node {
@@ -30,8 +31,6 @@ public:
 
 
 };
-
-// void updateValue(const std::shared_ptr<Node>& node);
 
 void computeGradients(const std::shared_ptr<Node>& node);
 

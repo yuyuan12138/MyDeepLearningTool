@@ -61,6 +61,41 @@ public:
         [[nodiscard]] double forward(const std::vector<double>& inputs) const override;
         void backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const override;
     };
+
+    class ReluOperation : public BasicOperation
+    {
+    public:
+        [[nodiscard]] double forward(const std::vector<double>& inputs) const override;
+        void backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const override;
+    };
+
+    class SignOperation : public BasicOperation
+    {
+        public:
+        [[nodiscard]] double forward(const std::vector<double>& inputs) const override;
+        void backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const override;
+    };
+
+    class SigmoidOperation : public BasicOperation
+    {
+        public:
+        [[nodiscard]] double forward(const std::vector<double>& inputs) const override;
+        void backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const override;
+    };
+
+    class TanhOperation : public BasicOperation
+    {
+        public:
+        [[nodiscard]] double forward(const std::vector<double>& inputs) const override;
+        void backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const override;
+    };
+
+    class SoftmaxOperation : public BasicOperation
+    {
+        public:
+        [[nodiscard]] double forward(const std::vector<double>& inputs) const override;
+        void backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const override;
+    };
 };
 
 

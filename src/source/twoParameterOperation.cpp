@@ -98,5 +98,76 @@ void TwoParameterOperation::SumOperation::backward(const std::vector<double>& in
     }
 }
 
+double TwoParameterOperation::ReluOperation::forward(const std::vector<double>& inputs) const
+{
+    return inputs[0] >= 0 ? inputs[0] : 0;
+}
+void TwoParameterOperation::ReluOperation::backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const
+{
+    grad_inputs[0] = inputs[0] >= 0 ? grad_output[0] : 0;
+}
+
+double TwoParameterOperation::SignOperation::forward(const std::vector<double>& inputs) const
+{
+    if (inputs[0] > 0)
+    {
+        return 1;
+    }
+
+    if (inputs[0] < 0)
+    {
+        return -1;
+    }
+
+    return 0;
+}
+
+void TwoParameterOperation::SignOperation::backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const
+{
+    grad_inputs[0] = 0;
+}
+
+double TwoParameterOperation::SigmoidOperation::forward(const std::vector<double>& inputs) const
+{
+    return 1.0 / (1.0 + std::exp(-inputs[0]));
+}
+
+void TwoParameterOperation::SigmoidOperation::backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const
+{
+    grad_inputs[0] = grad_output[0] * std::exp(-inputs[0]) / std::pow(1.0 + std::exp(-inputs[0]), 2);
+}
+
+double TwoParameterOperation::TanhOperation::forward(const std::vector<double>& inputs) const
+{
+    return (std::exp(inputs[0]) - std::exp(-inputs[0])) / (std::exp(inputs[0]) + std::exp(-inputs[0]));
+}
+void TwoParameterOperation::TanhOperation::backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const
+{
+    grad_inputs[0] = grad_output[0] * 4 / (std::exp(2 * inputs[0]) + std::exp(-2 * inputs[0]) + 2);
+}
+
+// double TwoParameterOperation::SoftmaxOperation::forward(const std::vector<double>& inputs) const
+// {
+//     const size_t n = inputs.size();
+//     double sum = 0;
+//     for(size_t i = 0; i < n; i++)
+//     {
+//
+//     }
+// }
+// void TwoParameterOperation::SoftmaxOperation::backward(const std::vector<double>& inputs, const std::vector<double>& grad_output, std::vector<double>& grad_inputs) const
+// {
+//
+// }
+
+
+
+
+
+
+
+
+
+
 
 

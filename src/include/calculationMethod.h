@@ -14,12 +14,16 @@ std::shared_ptr<Node> makeNode(const std::shared_ptr<TwoParameterOperation::Basi
 
 std::shared_ptr<Node> operator+(const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
 std::vector<std::shared_ptr<Node>> operator+(const std::vector<std::shared_ptr<Node>>& a, const std::vector<std::shared_ptr<Node>>& b);
+std::vector<std::vector<std::shared_ptr<Node>>> operator+(const std::vector<std::vector<std::shared_ptr<Node>>>& a, const std::vector<std::vector<std::shared_ptr<Node>>>& b);
+
 
 std::shared_ptr<Node> operator*(const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
 
 std::shared_ptr<Node> operator/(const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
 
 std::shared_ptr<Node> operator-(const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
+std::vector<std::shared_ptr<Node>> operator-(const std::vector<std::shared_ptr<Node>>& a, const std::vector<std::shared_ptr<Node>>& b);
+std::vector<std::vector<std::shared_ptr<Node>>> operator-(const std::vector<std::vector<std::shared_ptr<Node>>>& a, const std::vector<std::vector<std::shared_ptr<Node>>>& b);
 
 std::shared_ptr<Node> operator^(const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
 
@@ -29,4 +33,5 @@ std::shared_ptr<Node> sum(const std::vector<std::shared_ptr<Node>>& vec);
 std::shared_ptr<Node> sum(const std::vector<std::vector<std::shared_ptr<Node>>>& matrix);
 
 std::vector<std::shared_ptr<Node>> mm(const std::vector<std::vector<std::shared_ptr<Node>>>& mat, const std::vector<std::shared_ptr<Node>>& vec);
+std::vector<std::vector<std::shared_ptr<Node>>> mm(const std::vector<std::vector<std::shared_ptr<Node>>>& mat1, const std::vector<std::vector<std::shared_ptr<Node>>>& mat2);
 #endif //CALCULATIONMETHOD_H

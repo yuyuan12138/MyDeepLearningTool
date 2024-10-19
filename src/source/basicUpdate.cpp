@@ -8,7 +8,6 @@ void BasicUpdate::GradUpdate::update(const std::shared_ptr<Node>& node) const
 {
     node->value_ = node->value_ - node->grad_ * learning_rate_;
 }
-
 void BasicUpdate::GradUpdate::update(const std::vector<std::shared_ptr<Node>>& nodes) const
 {
     for (auto& node : nodes)
@@ -16,6 +15,8 @@ void BasicUpdate::GradUpdate::update(const std::vector<std::shared_ptr<Node>>& n
         node->value_ = node->value_ - node->grad_ * learning_rate_;
     }
 }
+
+
 
 
 

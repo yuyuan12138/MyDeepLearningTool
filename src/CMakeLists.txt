@@ -13,6 +13,7 @@ set(SOURCE_FILES
         source/lossFunction.cpp
         source/tensor.cpp
         source/utils.cpp
+        source/netFunction.cpp
 )
 
 add_library(nodeLib STATIC ${SOURCE_FILES})
