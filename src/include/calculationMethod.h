@@ -10,7 +10,7 @@
 #include "twoParameterOperation.h"
 #include "utils.h"
 
-std::shared_ptr<Node> makeNode(const std::shared_ptr<TwoParameterOperation::BasicOperation>& op, const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
+std::shared_ptr<Node> makeNode(const std::shared_ptr<BasicOperation>& op, const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
 
 std::shared_ptr<Node> operator+(const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b);
 std::vector<std::shared_ptr<Node>> operator+(const std::vector<std::shared_ptr<Node>>& a, const std::vector<std::shared_ptr<Node>>& b);
